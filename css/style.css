@@ -1,0 +1,191 @@
+:root {
+  --main-font-font-family: "Poppins", sans-serif;
+  --secondary-font-family: "Montserrat", sans-serif;
+  --main-color: #1c1c1c;
+  --secondary-color: #343434;
+  --third-color: #748182;
+}
+
+* {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui -apple-system "Segoe UI" Roboto "Helvetica Neue" "Noto Sans"
+    "Liberation Sans" Arial sans-serif "Apple Color Emoji" "Segoe UI Emoji" "Segoe UI Symbol"
+    "Noto Color Emoji";
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--secondary-color);
+  height: 100vh;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+li {
+  list-style: none;
+}
+input {
+  background-color: var(--secondary-color) !important;
+  color: white !important;
+}
+input::placeholder {
+  color: var(--third-color) !important;
+}
+/* start light Mode */
+.light {
+  background-color: white !important;
+}
+.light .navbar {
+  background-color: #eee;
+  color: white;
+}
+.light .home {
+  background-color: #6d6a6a;
+}
+.light input {
+  background-color: white !important;
+  color: var(--main-color) !important;
+}
+.light input::placeholder {
+  color: var(--third-color) !important;
+}
+
+/* end light Mode */
+/* Start Loader */
+.loader {
+  background-color: #1c1c1c;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow-x: hidden;
+}
+.clock-loader {
+  --clock-color: white;
+  --clock-width: 8rem;
+  --clock-radius: calc(var(--clock-width) / 2);
+  --clock-minute-length: calc(var(--clock-width) * 0.4);
+  --clock-hour-length: calc(var(--clock-width) * 0.2);
+  --clock-thickness: 0.2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--clock-width);
+  height: var(--clock-width);
+  border: 3px solid var(--clock-color);
+  border-radius: 50%;
+}
+.clock-loader::before,
+.clock-loader::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--clock-radius) * 0.25);
+  width: var(--clock-thickness);
+  background: var(--clock-color);
+  border-radius: 10px;
+  transform-origin: center calc(100% - calc(var(--clock-thickness) / 2));
+  animation: spin infinite linear;
+}
+.clock-loader::before {
+  height: var(--clock-minute-length);
+  animation-duration: 2s;
+}
+.clock-loader::after {
+  top: calc(var(--clock-radius) * 0.25 + var(--clock-hour-length));
+  height: var(--clock-hour-length);
+  animation-duration: 15s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* End Loader */
+/* start navbar */
+.navbar {
+  width: 80px;
+
+  background-color: white;
+}
+.toggler-btn {
+  transition: all 0.5s;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+  border: none;
+}
+.nav-item {
+  cursor: pointer;
+  /* transition: all 0.5s; */
+}
+/* end navbar */
+/* start home */
+.home {
+  margin-left: -260px;
+  width: 260px;
+  background-color: var(--main-color);
+  /* transition: all 0.5s; */
+}
+.lists .navbar-nav-one li {
+  /* display: none; */
+  transition: all 0.5s;
+}
+
+/* end home */
+/* start Card */
+.body-content{
+  display: none;
+}
+.body-content-parent .body-card{
+  display: none;
+}
+.body-content-parent .body-content{
+  display: flex;
+  color: white;
+}
+.card{
+  cursor: pointer;
+
+}
+.search-cards .card .card-body,
+.category-card .card .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.575);
+  width: 100%;
+  height: 0;
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+  opacity: 0;
+  transition: all 0.5;
+
+}
+.search-cards .card:hover .card-body,
+.category-card .card:hover .card-body {
+  opacity: 100;
+  height: 100%;
+}
+/* end Card */
