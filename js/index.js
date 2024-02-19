@@ -162,6 +162,3 @@ $(document).ready(function () {
     $(".loader").hide();
   }, 3000);
 });
-$(".loader").onload(function () {
-  $(".loader").show();
-});

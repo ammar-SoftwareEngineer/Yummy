@@ -49,10 +49,10 @@ function displayDetailsCategory(arr) {
   $("#rowDetailsCategory").html(col);
 }
 function dataCategories(categories) {
-  let col=``;
+  let col = ``;
   let nameCategory;
   for (let i = 0; i < categories.length; i++) {
-    nameCategory = categories[i].strCategory ;
+    nameCategory = categories[i].strCategory;
     col += ` 
         <div class="col-lg-4 col-md-6">
         <div class="card rounded-3" onclick=" getDetailsCategory('${nameCategory}')" >
@@ -71,13 +71,12 @@ function dataCategories(categories) {
   }
 }
 
-
 // loader
-$(document).ready(function () {
-  setTimeout(function () {
-    $(".loader").hide();
-  }, 3000);
-});
-$(".loader").onload(function () {
-  $(".loader").show();
-});
+// $(document).ready(function () {
+//   setTimeout(function () {
+//     $(".loader").hide();
+//   }, 3000);
+// });
+// $(".loader").onload(function () {
+//   $(".loader").show();
+// });

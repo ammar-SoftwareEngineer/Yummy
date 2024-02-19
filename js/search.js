@@ -61,18 +61,18 @@ function getCardSearch(meals) {
   }
 }
 
-
 inputSearch.addEventListener("keyup", (s) => {
   getSearchApi(s.target.value);
 });
 inputSearchLetter.addEventListener("keyup", (l) => {
   getSearchLetterApi(l.target.value);
 });
-$(document).ready(function () {
-  setTimeout(function () {
-    $(".loader").hide();
-  }, 3000);
-});
-$(".loader").onload(function () {
-  $(".loader").show();
-});
+
+// $(document).ready(function () {
+//   setTimeout(function () {
+//     $(".loader").hide();
+//   }, 3000);
+// });
+// $(".loader").onload(function () {
+//   $(".loader").show();
+// });
